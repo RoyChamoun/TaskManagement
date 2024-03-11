@@ -8,10 +8,14 @@ interface Task {
 interface TaskListProps {
   tasks: Task[];
   onTaskChecked: (taskId: number) => void;
-  onDeleteTask: (taskId: number) => void; // Add onDeleteTask prop
+  onDeleteTask: (taskId: number) => void;
 }
 
-const TaskList: React.FC<TaskListProps> = ({ tasks, onTaskChecked, onDeleteTask }) => {
+const TaskList: React.FC<TaskListProps> = ({
+  tasks,
+  onTaskChecked,
+  onDeleteTask,
+}) => {
   const handleCheckboxChange = (taskId: number) => {
     onTaskChecked(taskId);
   };
@@ -50,7 +54,3 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onTaskChecked, onDeleteTask 
 };
 
 export default TaskList;
-
-
-
-

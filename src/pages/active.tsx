@@ -4,7 +4,6 @@ import TaskManager from "@/components/TaskManager";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
-
 interface Task {
   id: number;
   text: string;
@@ -14,6 +13,15 @@ const Active = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [completedTasks, setCompletedTasks] = useState<Task[]>([]);
 
+  //   while (true) {
+  //     console.log("This loop runs infinitely!");
+  // }
+  // let count = 0;
+
+  // while (count < 10) {
+  //     console.log("Loop iteration: ", count);
+  //     count++;
+  // }
 
   const handleAddTask = (task: string) => {
     const newTask = {
@@ -40,7 +48,6 @@ const Active = () => {
   };
 
   const handleDeleteTask = (taskId: number) => {
-    // Remove task from tasks or completedTasks based on the current activeTa
     toast.success("Task deleted successfully!");
   };
 
@@ -53,7 +60,7 @@ const Active = () => {
         <TaskList
           tasks={tasks}
           onTaskChecked={(taskId) => handleTaskChecked(taskId, false)}
-          onDeleteTask={handleDeleteTask} // Pass onDeleteTask prop
+          onDeleteTask={handleDeleteTask}
         />
       </div>
     </div>

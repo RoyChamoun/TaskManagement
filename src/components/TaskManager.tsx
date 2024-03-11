@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// Define the Task interface
 interface Task {
   id: number;
   description: string;
@@ -45,7 +44,3 @@ const TaskManager: React.FC<TaskManagerProps> = ({ onAddTask }) => {
 };
 
 export default TaskManager;
-
-
-
-
